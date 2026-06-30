@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Venta de Páginas Web | BL Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,Arial;background:#050508;color:#fff;overflow-x:hidden}
+    a{text-decoration:none;color:inherit}
+    .bg{position:fixed;inset:0;z-index:-3;background:radial-gradient(circle at 15% 5%,#00ffe733,transparent 35%),radial-gradient(circle at 80% 10%,#ff005533,transparent 38%),radial-gradient(circle at 50% 100%,#7b2cff33,transparent 45%),#050508}
+    .grid{position:fixed;inset:0;z-index:-2;background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,#000,transparent 80%)}
+    .glow{position:fixed;width:360px;height:360px;border-radius:50%;background:#00ffe722;filter:blur(70px);pointer-events:none;z-index:-1;left:50%;top:30%}
+
+    header{width:min(1180px,92%);margin:0 auto;padding:24px 0;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .logo{font-weight:900;font-size:24px;letter-spacing:-1px}.logo span{color:#00ffe7;text-shadow:0 0 25px #00ffe7}
+    nav{display:flex;gap:16px;align-items:center}.navlink{font-weight:800;font-size:14px;color:#d7d7e7}.navlink:hover{color:#00ffe7}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 18px;border-radius:999px;background:linear-gradient(135deg,#00ffe7,#ff0055);color:#050508;font-weight:900;box-shadow:0 0 32px #00ffe733;transition:.25s;border:none;cursor:pointer}.btn:hover{transform:translateY(-3px);filter:saturate(1.2)}
+    .btn2{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:999px;border:1px solid #ffffff25;background:#ffffff0d;font-weight:900;color:#fff;transition:.25s}.btn2:hover{border-color:#00ffe7;color:#00ffe7}
+
+    .hero{width:min(1180px,92%);margin:45px auto 80px;display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}
+    .badge{display:inline-flex;padding:9px 13px;border:1px solid #ffffff20;border-radius:999px;background:#ffffff0d;color:#dedeef;font-weight:900;font-size:13px;margin-bottom:18px}
+    h1{font-size:clamp(44px,7vw,88px);line-height:.9;letter-spacing:-4px}.gradient{background:linear-gradient(90deg,#00ffe7,#ff0055,#fff);-webkit-background-clip:text;color:transparent;text-shadow:none}
+    .hero p{margin:22px 0;color:#d1d1df;font-size:18px;line-height:1.7;max-width:660px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-card{border:1px solid #ffffff1d;background:linear-gradient(180deg,#ffffff12,#ffffff06);border-radius:34px;padding:18px;box-shadow:0 30px 80px #0008;position:relative;overflow:hidden}.hero-card:before{content:"";position:absolute;inset:-2px;background:linear-gradient(135deg,#00ffe733,#ff005533,transparent);filter:blur(25px);z-index:-1}.hero-card img{width:100%;height:340px;object-fit:cover;border-radius:24px;display:block}.float{position:absolute;left:30px;bottom:30px;background:#050508d9;backdrop-filter:blur(10px);border:1px solid #ffffff22;border-radius:20px;padding:16px}.float b{font-size:32px;color:#00ffe7}.float p{font-size:13px;color:#aaa;margin:2px 0 0}
+
+    section{width:min(1180px,92%);margin:0 auto 80px}.title{font-size:clamp(32px,4vw,54px);letter-spacing:-2px;margin-bottom:12px}.subtitle{color:#bdbdd0;line-height:1.7;margin-bottom:28px;max-width:760px}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}.stat{border:1px solid #ffffff17;background:#ffffff0b;border-radius:24px;padding:22px;text-align:center}.stat b{display:block;font-size:32px;color:#00ffe7}.stat span{color:#cfcfe0;font-weight:800;font-size:13px}
+
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{border:1px solid #ffffff16;background:linear-gradient(180deg,#ffffff12,#ffffff07);border-radius:28px;overflow:hidden;box-shadow:0 22px 60px #0008;transition:.25s}.card:hover{transform:translateY(-8px);border-color:#00ffe777}.thumb{height:230px;background:#111;overflow:hidden}.thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:.35s}.card:hover .thumb img{transform:scale(1.06)}.content{padding:22px}.tag{display:inline-block;padding:7px 11px;border-radius:999px;background:#00ffe71a;color:#00ffe7;font-weight:900;font-size:12px;margin-bottom:12px}.tag.red{background:#ff00551c;color:#ff4d83}.card h3{font-size:25px;margin-bottom:9px}.card p{color:#c8c8d8;line-height:1.6;font-size:14px}.features{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}.features span{font-size:12px;padding:7px 9px;border-radius:999px;background:#ffffff10;color:#ededff}.price{font-size:28px;font-weight:900;margin:12px 0}.actions{display:flex;gap:10px;flex-wrap:wrap}.smallbtn{flex:1;text-align:center;padding:12px;border-radius:14px;background:#fff;color:#050508;font-weight:900}.smallbtn.dark{background:#ffffff10;color:#fff;border:1px solid #ffffff18}.smallbtn.dark:hover{border-color:#00ffe7;color:#00ffe7}
+
+    .services{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.service{padding:22px;border-radius:24px;background:#ffffff0d;border:1px solid #ffffff16}.service h3{margin-bottom:8px}.service p{color:#bdbdd0;line-height:1.6;font-size:14px}
+    .process{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.step{padding:20px;border-radius:24px;background:#ffffff0b;border:1px solid #ffffff16}.step b{display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;border-radius:50%;background:#00ffe7;color:#050508;margin-bottom:12px}.step p{color:#d0d0df;line-height:1.5;font-size:14px;font-weight:700}
+    .cta{border:1px solid #ffffff1a;background:linear-gradient(135deg,#00ffe71e,#ff00551f);border-radius:34px;padding:35px;display:flex;justify-content:space-between;gap:25px;align-items:center}.cta h2{font-size:38px;letter-spacing:-1px}.cta p{color:#e1e1ed;margin-top:10px;line-height:1.6;max-width:680px}
+    footer{text-align:center;color:#999;padding:35px}.whatsapp{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#00ffe7,#ff0055);color:#050508;display:flex;align-items:center;justify-content:center;font-size:27px;font-weight:900;box-shadow:0 0 35px #00ffe755;z-index:20}
+
+    @media(max-width:950px){nav{display:none}.hero{grid-template-columns:1fr;margin-top:22px}.cards,.services,.stats,.process{grid-template-columns:1fr}.cta{flex-direction:column;align-items:flex-start}.hero-card img{height:250px}h1{letter-spacing:-2px}.thumb{height:210px}}
+  </style>
+</head>
+<body>
+  <div class="bg"></div><div class="grid"></div><div class="glow" id="glow"></div>
+
+  <header>
+    <div class="logo">BL <span>STUDIO</span></div>
+    <nav>
+      <a class="navlink" href="#proyectos">Proyectos</a>
+      <a class="navlink" href="#servicios">Servicios</a>
+      <a class="navlink" href="#proceso">Proceso</a>
+      <a class="navlink" href="#contacto">Contacto</a>
+      <a class="btn" href="https://wa.me/50376439407?text=Hola,%20quiero%20cotizar%20una%20pagina%20web" target="_blank">Cotizar por WhatsApp</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="badge">🔥 Diseños modernos para negocios, marcas y proyectos</div>
+        <h1>Venta de páginas <span class="gradient">web</span> personalizadas y listas para publicar</h1>
+        <p>Creo páginas web modernas, responsivas y completamente personalizadas para cualquier tipo de negocio. Todas funcionan en celular, tablet y PC, y se entregan listas para publicar en Internet.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#proyectos">Ver proyectos</a>
+          <a class="btn2" href="#contacto">Pedir cotización</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>6+</b><span>Proyectos demo</span></div>
+          <div class="stat"><b>100%</b><span>Responsive</span></div>
+          <div class="stat"><b>24/7</b><span>Web publicada</span></div>
+          <div class="stat"><b>Pro</b><span>Diseño moderno</span></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="BL MUSIC.png" alt="BL Music demo">
+        <div class="float"><b>Webs</b><p>listas para vender</p></div>
+      </div>
+    </section>
+
+    <section id="proyectos">
+      <h2 class="title">Proyectos en venta</h2>
+      <p class="subtitle">Estas demos se pueden modificar con el logo, colores, fotos, productos, datos y funciones que el cliente necesite.</p>
+      <div class="cards">
+        <article class="card">
+          <div class="thumb"><img src="American Shoe Store.png" alt="American Shoe Store"></div>
+          <div class="content">
+            <span class="tag red">Tienda / catálogo</span>
+            <h3>American Shoe Store</h3>
+            <p>Página para tienda de zapatos con catálogo por categorías, carruseles, WhatsApp y foto del local.</p>
+            <div class="features"><span>Zapatos</span><span>Tacos</span><span>Ropa</span><span>Calcetines</span><span>WhatsApp</span></div>
+            <div class="price">Desde $0</div>
+            <div class="actions">
+              <a class="smallbtn" href="https://wa.me/50376439407?text=Hola,%20me%20interesa%20la%20pagina%20American%20Shoe%20Store" target="_blank">Me interesa</a>
+              <a class="smallbtn dark" href="https://american-shoe-store.vercel.app/" target="_blank">Ver demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><img src="Barber Shop.png" alt="Página Barber Shop"></div>
+          <div class="content">
+            <span class="tag red">Reservas</span>
+            <h3>Barber Shop</h3>
+            <p>Sistema para barberías con cortes, precios, barberos activos/inactivos, horarios y reservaciones.</p>
+            <div class="features"><span>Reservas</span><span>Panel admin</span><span>Barberos</span><span>Horarios</span><span>Móvil / Tablet / PC</span></div>
+            <div class="price">Desde $0</div>
+            <div class="actions">
+              <a class="smallbtn" href="https://wa.me/50376439407?text=Hola,%20me%20interesa%20la%20pagina%20Barber%20Shop" target="_blank">Me interesa</a>
+              <a class="smallbtn dark" href="https://barber-shop-bolo7.vercel.app/" target="_blank">Ver demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><img src="BL MUSIC.png" alt="Página BL Music"></div>
+          <div class="content">
+            <span class="tag">App musical</span>
+            <h3>BL Music</h3>
+            <p>Página tipo reproductor musical con canciones, artistas, buscador, favoritos y reproducción automática.</p>
+            <div class="features"><span>Reproductor</span><span>Artistas</span><span>Buscador</span><span>Favoritos</span><span>Móvil / Tablet / PC</span></div>
+            <div class="price">Desde $0</div>
+            <div class="actions">
+              <a class="smallbtn" href="https://wa.me/50376439407?text=Hola,%20me%20interesa%20la%20pagina%20BL%20Music" target="_blank">Me interesa</a>
+              <a class="smallbtn dark" href="https://bolito-music.vercel.app/" target="_blank">Ver demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><img src="GORRAS BL.png" alt="Página Gorras BL"></div>
+          <div class="content">
+            <span class="tag">Tienda online</span>
+            <h3>Gorras BL</h3>
+            <p>Tienda visual para vender productos con inicio premium, catálogo, música y botones de compra.</p>
+            <div class="features"><span>Catálogo</span><span>Productos</span><span>WhatsApp</span><span>Música</span><span>Diseño premium</span></div>
+            <div class="price">Desde $0</div>
+            <div class="actions">
+              <a class="smallbtn" href="https://wa.me/50376439407?text=Hola,%20me%20interesa%20la%20pagina%20Gorras%20BL" target="_blank">Me interesa</a>
+              <a class="smallbtn dark" href="https://gorras-bl.vercel.app/" target="_blank">Ver demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><img src="Restaurante Los Poblanos.png" alt="Restaurante Los Poblanos"></div>
+          <div class="content">
+            <span class="tag red">Restaurante</span>
+            <h3>Los Poblanos</h3>
+            <p>Página para restaurante con menú destacado, promociones, galería, ubicación y reservas por WhatsApp.</p>
+            <div class="features"><span>Menú</span><span>Promos</span><span>Galería</span><span>Ubicación</span><span>Reservas</span></div>
+            <div class="price">Desde $0</div>
+            <div class="actions">
+              <a class="smallbtn" href="https://wa.me/50376439407?text=Hola,%20me%20interesa%20la%20pagina%20de%20Restaurante" target="_blank">Me interesa</a>
+              <a class="smallbtn dark" href="https://restaurante-los-poblanos.vercel.app/" target="_blank">Ver demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb"><img src="NAZIS CHEATING.png" alt="Página de servicios digitales"></div>
+          <div class="content">
+            <span class="tag">Landing page</span>
+            <h3>Página de Servicios</h3>
+            <p>Landing page moderna para mostrar servicios, planes, precios, beneficios y contacto directo por WhatsApp.</p>
+            <div class="features"><span>Planes</span><span>Precios</span><span>Contacto</span><span>Responsive</span><span>Diseño limpio</span></div>
+            <div class="price">Desde $0</div>
+            <div class="actions">
+              <a class="smallbtn" href="https://wa.me/50376439407?text=Hola,%20me%20interesa%20una%20landing%20page%20de%20servicios" target="_blank">Me interesa</a>
+              <a class="smallbtn dark" href="LINK_DEMO_SERVICIOS" target="_blank">Ver demo</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <h2 class="title">Qué incluye</h2>
+      <p class="subtitle">Cada página se adapta al negocio del cliente para que no se vea copiada ni básica.</p>
+      <div class="services">
+        <div class="service"><h3>🎨 Diseño personalizado</h3><p>Colores, logo, textos, fotos y estilo según el negocio.</p></div>
+        <div class="service"><h3>📱 Responsive</h3><p>Funciona bien en celular, tablet y computadora.</p></div>
+        <div class="service"><h3>🚀 Publicación</h3><p>Ayuda para subir la página a GitHub y Vercel.</p></div>
+        <div class="service"><h3>🛠️ Cambios</h3><p>Se pueden agregar productos, secciones, botones y funciones.</p></div>
+      </div>
+    </section>
+
+    <section id="proceso">
+      <h2 class="title">Cómo trabajamos</h2>
+      <p class="subtitle">Proceso simple para crear la página del cliente.</p>
+      <div class="process">
+        <div class="step"><b>1</b><p>Me escribes por WhatsApp.</p></div>
+        <div class="step"><b>2</b><p>Me cuentas qué negocio tienes.</p></div>
+        <div class="step"><b>3</b><p>Preparo una demo visual.</p></div>
+        <div class="step"><b>4</b><p>Hacemos cambios y mejoras.</p></div>
+        <div class="step"><b>5</b><p>Se publica la página final.</p></div>
+      </div>
+    </section>
+
+    <section id="contacto" class="cta">
+      <div>
+        <h2>¿Quieres una página para tu negocio?</h2>
+        <p>Mándame el nombre del negocio, colores, logo, fotos y funciones que necesitas. Te preparo una cotización según lo que quieras agregar.</p>
+      </div>
+      <a class="btn" href="https://wa.me/50376439407?text=Hola,%20quiero%20una%20pagina%20web%20personalizada" target="_blank">Escribirme por WhatsApp</a>
+    </section>
+  </main>
+
+  <a class="whatsapp" href="https://wa.me/50376439407?text=Hola,%20quiero%20cotizar%20una%20pagina%20web" target="_blank">☏</a>
+  <footer>© 2026 BL Studio — Venta de páginas web personalizadas y listas para publicar</footer>
+
+  <script>
+    const glow = document.getElementById('glow');
+    document.addEventListener('mousemove', (e) => {
+      glow.style.left = (e.clientX - 180) + 'px';
+      glow.style.top = (e.clientY - 180) + 'px';
+    });
+  </script>
+</body>
+</html>
